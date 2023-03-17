@@ -13,6 +13,6 @@ class WriterSerializer(serializers.Serializer):
         choices=['beginner', 'intermediate', 'expert'],
         required=False
     )
-    service_type = StringListField(required=False)
+    service_type = serializers.CharField(required=False)
     target_audience = StringListField(required=False)
     prompt = serializers.CharField(required=False)
