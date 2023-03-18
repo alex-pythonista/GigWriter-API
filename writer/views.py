@@ -16,15 +16,12 @@ class GigDescriptionView(APIView):
                 data = serializer.validated_data
                 keywords = " ".join(data['keywords'])
                 target_audience = " ".join(data['target_audience'])
-                skills = " ".join(data['skills'])
 
                 prompt = f'''
-                Write a Fiverr gig description for {data["service_type"]}.\n
-                Keywords to include: {keywords}.\n
-                Portfolio: {data['portfolio']}.\n
-                Target Audience: {target_audience}.\n
-                Experience: {data['experience']}.\n
-                Skills: {skills}.
+                Write a description for the fiverr gig titled {data["title"]}.
+                Keywords to include: {keywords}.
+                Portfolio: {data['portfolio']}.
+                Target Audience: {target_audience}.
                 '''
             else:
                 print(serializer.errors)

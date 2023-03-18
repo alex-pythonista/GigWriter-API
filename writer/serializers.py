@@ -8,11 +8,6 @@ class StringListField(serializers.ListField):
 class WriterSerializer(serializers.Serializer):
     title = serializers.CharField(required=False)
     keywords = StringListField(required=False)
-    skills = StringListField(required=False)
-    experience = serializers.ChoiceField(
-        choices=['beginner', 'intermediate', 'expert'],
-        required=False
-    )
-    service_type = serializers.CharField(required=False)
     target_audience = StringListField(required=False)
+    portfolio = serializers.URLField(required=False)
     prompt = serializers.CharField(required=False)
